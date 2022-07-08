@@ -1,6 +1,6 @@
 {
   "name": "thumbtackstic",
-  "version": "0.0.59",
+  "version": "0.0.60",
   "description": "Flow library",
   "main": "dist/thumbtackstic.min.js",
   "scripts": {
