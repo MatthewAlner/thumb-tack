@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/thumbtackstic.js',
   output: {
-    library: 'thumbtackstic',
+    library: 'Thumbtackstic',
     libraryTarget: 'umd',
     libraryExport: 'default',
     filename: 'thumbtackstic.min.js',
