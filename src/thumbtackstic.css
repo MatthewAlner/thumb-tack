@@ -1,11 +1,11 @@
-.parent-thumbtack {
+.parent-thumbtackstic {
   display: flex;
   overflow: hidden;
   touch-action: none;
   outline:none;
 }
 
-.thumbtack {
+.thumbtackstic {
   width: 100%;
   height: 100%;
   position: relative;
@@ -13,12 +13,12 @@
   perspective: 0;
 }
 
-.thumbtack .parent-node {
+.thumbtackstic .parent-node {
   position: relative;
 
 }
 
-.thumbtack .thumbtack-node {
+.thumbtackstic .thumbtackstic-node {
   display: flex;
   align-items: center;
   position: absolute;
@@ -32,23 +32,23 @@
   padding: 15px;
 }
 
-.thumbtack .thumbtack-node.selected {
+.thumbtackstic .thumbtackstic-node.selected {
   background: red;
 }
-.thumbtack .thumbtack-node:hover {
+.thumbtackstic .thumbtackstic-node:hover {
   cursor: move;
 }
 
-.thumbtack .thumbtack-node .inputs, .thumbtack .thumbtack-node .outputs {
+.thumbtackstic .thumbtackstic-node .inputs, .thumbtackstic .thumbtackstic-node .outputs {
   width: 0px;
 }
 
-.thumbtack .thumbtack-node .thumbtack_content_node {
+.thumbtackstic .thumbtackstic-node .thumbtackstic_content_node {
   width: 100%;
   display: block;
 }
 
-.thumbtack .thumbtack-node .input, .thumbtack .thumbtack-node .output {
+.thumbtackstic .thumbtackstic-node .input, .thumbtackstic .thumbtackstic-node .output {
 
   position: relative;
   width: 20px;
@@ -61,42 +61,42 @@
   margin-bottom: 5px;
 }
 
-.thumbtack .thumbtack-node .input {
+.thumbtackstic .thumbtackstic-node .input {
   left: -27px;
   top: 2px;
   background: yellow;
 }
-.thumbtack .thumbtack-node .output {
+.thumbtackstic .thumbtackstic-node .output {
   right: -3px;
   top: 2px;
 }
 
-.thumbtack svg {
+.thumbtackstic svg {
   z-index: 0;
   position: absolute;
   overflow: visible !important;
 }
-.thumbtack .connection {
+.thumbtackstic .connection {
   position: absolute;
   pointer-events: none;
   aspect-ratio: 1 / 1;
 }
-.thumbtack .connection .main-path {
+.thumbtackstic .connection .main-path {
   fill: none;
   stroke-width: 5px;
   stroke: steelblue;
   pointer-events: all;
 }
-.thumbtack .connection .main-path:hover {
+.thumbtackstic .connection .main-path:hover {
   stroke: #1266ab;
   cursor: pointer;
 }
 
-.thumbtack .connection .main-path.selected {
+.thumbtackstic .connection .main-path.selected {
   stroke: #43b993;
 }
 
-.thumbtack .connection .point {
+.thumbtackstic .connection .point {
   cursor: move;
   stroke: black;
   stroke-width: 2;
@@ -104,17 +104,17 @@
   pointer-events: all;
 }
 
-.thumbtack .connection .point.selected, .thumbtack .connection .point:hover {
+.thumbtackstic .connection .point.selected, .thumbtackstic .connection .point:hover {
   fill: #1266ab;
 }
 
-.thumbtack .main-path {
+.thumbtackstic .main-path {
   fill: none;
   stroke-width: 5px;
   stroke: steelblue;
 }
 
-.thumbtack-delete {
+.thumbtackstic-delete {
   position: absolute;
   display: block;
   width: 30px;
@@ -130,12 +130,12 @@
   font-family: monospace;
   cursor: pointer;
 }
-.thumbtack > .thumbtack-delete {
+.thumbtackstic > .thumbtackstic-delete {
   margin-left: -15px;
   margin-top: 15px;
 }
 
-.parent-node .thumbtack-delete {
+.parent-node .thumbtackstic-delete {
   right: -15px;
   top: -15px;
 }

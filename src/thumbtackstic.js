@@ -1,4 +1,4 @@
-export default class Thumbtack {
+export default class Thumbtackstic {
   constructor(container, render = null, parent = null) {
     this.events = {};
     this.container = container;
@@ -35,7 +35,7 @@ export default class Thumbtack {
 
     this.noderegister = {};
     this.render = render;
-    this.thumbtack = { "thumbtack": { "Home": { "data": {} }}};
+    this.thumbtackstic = { "thumbtackstic": { "Home": { "data": {} }}};
     // Configurable options
     this.module = 'Home';
     this.editor_mode = 'edit';
@@ -51,11 +51,11 @@ export default class Thumbtack {
   }
 
   start () {
-    // console.info("Start Thumbtack!!");
-    this.container.classList.add("parent-thumbtack");
+    // console.info("Start Thumbtackstic!!");
+    this.container.classList.add("parent-thumbtackstic");
     this.container.tabIndex = 0;
     this.precanvas = document.createElement('div');
-    this.precanvas.classList.add("thumbtack");
+    this.precanvas.classList.add("thumbtackstic");
     this.container.appendChild(this.precanvas);
 
     /* Mouse and Touch Actions */
@@ -138,21 +138,21 @@ export default class Thumbtack {
   }
   /* End Mobile Zoom */
   load() {
-    for (var key in this.thumbtack.thumbtack[this.module].data) {
-      this.addNodeImport(this.thumbtack.thumbtack[this.module].data[key], this.precanvas);
+    for (var key in this.thumbtackstic.thumbtackstic[this.module].data) {
+      this.addNodeImport(this.thumbtackstic.thumbtackstic[this.module].data[key], this.precanvas);
     }
 
     if(this.reroute) {
-      for (var key in this.thumbtack.thumbtack[this.module].data) {
-        this.addRerouteImport(this.thumbtack.thumbtack[this.module].data[key]);
+      for (var key in this.thumbtackstic.thumbtackstic[this.module].data) {
+        this.addRerouteImport(this.thumbtackstic.thumbtackstic[this.module].data[key]);
       }
     }
 
-    for (var key in this.thumbtack.thumbtack[this.module].data) {
+    for (var key in this.thumbtackstic.thumbtackstic[this.module].data) {
       this.updateConnectionNodes('node-'+key);
     }
 
-    const editor = this.thumbtack.thumbtack;
+    const editor = this.thumbtackstic.thumbtackstic;
     let number = 1;
     Object.keys(editor).map(function(moduleName, index) {
       Object.keys(editor[moduleName].data).map(function(id, index2) {
@@ -178,14 +178,14 @@ export default class Thumbtack {
     if(this.editor_mode === 'fixed') {
       //return false;
        e.preventDefault();
-       if(e.target.classList[0] === 'parent-thumbtack' || e.target.classList[0] === 'thumbtack') {
-         this.ele_selected = e.target.closest(".parent-thumbtack");
+       if(e.target.classList[0] === 'parent-thumbtackstic' || e.target.classList[0] === 'thumbtackstic') {
+         this.ele_selected = e.target.closest(".parent-thumbtackstic");
        } else {
          return false;
        }
     } else if(this.editor_mode === 'view') {
-      if(e.target.closest(".thumbtack") != null || e.target.matches('.parent-thumbtack')) {
-        this.ele_selected = e.target.closest(".parent-thumbtack");
+      if(e.target.closest(".thumbtackstic") != null || e.target.matches('.parent-thumbtackstic')) {
+        this.ele_selected = e.target.closest(".parent-thumbtackstic");
         e.preventDefault();
       }
     } else {
@@ -195,12 +195,12 @@ export default class Thumbtack {
         this.contextmenuDel();
       }
 
-      if(e.target.closest(".thumbtack_content_node") != null) {
-        this.ele_selected = e.target.closest(".thumbtack_content_node").parentElement;
+      if(e.target.closest(".thumbtackstic_content_node") != null) {
+        this.ele_selected = e.target.closest(".thumbtackstic_content_node").parentElement;
       }
     }
     switch (this.ele_selected.classList[0]) {
-      case 'thumbtack-node':
+      case 'thumbtackstic-node':
         if(this.node_selected != null) {
           this.node_selected.classList.remove("selected");
           if(this.node_selected != this.ele_selected) {
@@ -241,7 +241,7 @@ export default class Thumbtack {
         }
         this.drawConnection(e.target);
         break;
-      case 'parent-thumbtack':
+      case 'parent-thumbtackstic':
         if(this.node_selected != null) {
           this.node_selected.classList.remove("selected");
           this.node_selected = null;
@@ -254,7 +254,7 @@ export default class Thumbtack {
         }
         this.editor_selected = true;
         break;
-      case 'thumbtack':
+      case 'thumbtackstic':
         if(this.node_selected != null) {
           this.node_selected.classList.remove("selected");
           this.node_selected = null;
@@ -294,7 +294,7 @@ export default class Thumbtack {
         this.drag_point = true;
         this.ele_selected.classList.add("selected");
       break;
-      case 'thumbtack-delete':
+      case 'thumbtackstic-delete':
         if(this.node_selected ) {
           this.removeNodeId(this.node_selected.id);
         }
@@ -365,8 +365,8 @@ export default class Thumbtack {
       this.ele_selected.style.top = (this.ele_selected.offsetTop - y) + "px";
       this.ele_selected.style.left = (this.ele_selected.offsetLeft - x) + "px";
 
-      this.thumbtack.thumbtack[this.module].data[this.ele_selected.id.slice(5)].pos_x = (this.ele_selected.offsetLeft - x);
-      this.thumbtack.thumbtack[this.module].data[this.ele_selected.id.slice(5)].pos_y = (this.ele_selected.offsetTop - y);
+      this.thumbtackstic.thumbtackstic[this.module].data[this.ele_selected.id.slice(5)].pos_x = (this.ele_selected.offsetLeft - x);
+      this.thumbtackstic.thumbtackstic[this.module].data[this.ele_selected.id.slice(5)].pos_y = (this.ele_selected.offsetTop - y);
 
       this.updateConnectionNodes(this.ele_selected.id)
     }
@@ -400,11 +400,11 @@ export default class Thumbtack {
       }
 
       const nodeId = nodeUpdate.slice(5);
-      const searchConnection = this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections.findIndex(function(item,i) {
+      const searchConnection = this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections.findIndex(function(item,i) {
         return item.node ===  nodeUpdateIn && item.output === input_class;
       });
 
-      this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points[numberPointPosition] = { pos_x: pos_x, pos_y: pos_y };
+      this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points[numberPointPosition] = { pos_x: pos_x, pos_y: pos_y };
 
       const parentSelected = this.ele_selected.parentElement.classList[2].slice(9);
 
@@ -448,11 +448,11 @@ export default class Thumbtack {
       this.editor_selected = false;
     }
     if(this.connection === true) {
-      if(ele_last.classList[0] === 'input' || (this.force_first_input && (ele_last.closest(".thumbtack_content_node") != null || ele_last.classList[0] === 'thumbtack-node'))) {
+      if(ele_last.classList[0] === 'input' || (this.force_first_input && (ele_last.closest(".thumbtackstic_content_node") != null || ele_last.classList[0] === 'thumbtackstic-node'))) {
 
-        if(this.force_first_input && (ele_last.closest(".thumbtack_content_node") != null || ele_last.classList[0] === 'thumbtack-node')) {
-          if(ele_last.closest(".thumbtack_content_node") != null) {
-            var input_id = ele_last.closest(".thumbtack_content_node").parentElement.id;
+        if(this.force_first_input && (ele_last.closest(".thumbtackstic_content_node") != null || ele_last.classList[0] === 'thumbtackstic-node')) {
+          if(ele_last.closest(".thumbtackstic_content_node") != null) {
+            var input_id = ele_last.closest(".thumbtackstic_content_node").parentElement.id;
           } else {
             var input_id = ele_last.id;
           }
@@ -483,8 +483,8 @@ export default class Thumbtack {
           var id_input = input_id.slice(5);
           var id_output = output_id.slice(5);
 
-          this.thumbtack.thumbtack[this.module].data[id_output].outputs[output_class].connections.push( {"node": id_input, "output": input_class});
-          this.thumbtack.thumbtack[this.module].data[id_input].inputs[input_class].connections.push( {"node": id_output, "input": output_class});
+          this.thumbtackstic.thumbtackstic[this.module].data[id_output].outputs[output_class].connections.push( {"node": id_input, "output": input_class});
+          this.thumbtackstic.thumbtackstic[this.module].data[id_input].inputs[input_class].connections.push( {"node": id_output, "input": output_class});
           this.updateConnectionNodes('node-'+id_output);
           this.updateConnectionNodes('node-'+id_input);
           this.dispatch('connectionCreated', { output_id: id_output, input_id: id_input, output_class:  output_class, input_class: input_class});
@@ -524,12 +524,12 @@ export default class Thumbtack {
     if(this.editor_mode === 'fixed' || this.editor_mode === 'view') {
       return false;
     }
-    if(this.precanvas.getElementsByClassName("thumbtack-delete").length) {
-      this.precanvas.getElementsByClassName("thumbtack-delete")[0].remove()
+    if(this.precanvas.getElementsByClassName("thumbtackstic-delete").length) {
+      this.precanvas.getElementsByClassName("thumbtackstic-delete")[0].remove()
     };
     if(this.node_selected || this.connection_selected) {
       var deletebox = document.createElement('div');
-      deletebox.classList.add("thumbtack-delete");
+      deletebox.classList.add("thumbtackstic-delete");
       deletebox.innerHTML = "x";
       if(this.node_selected) {
         this.node_selected.appendChild(deletebox);
@@ -547,8 +547,8 @@ export default class Thumbtack {
 
   }
   contextmenuDel() {
-    if(this.precanvas.getElementsByClassName("thumbtack-delete").length) {
-      this.precanvas.getElementsByClassName("thumbtack-delete")[0].remove()
+    if(this.precanvas.getElementsByClassName("thumbtackstic-delete").length) {
+      this.precanvas.getElementsByClassName("thumbtackstic-delete")[0].remove()
     };
   }
 
@@ -709,8 +709,8 @@ export default class Thumbtack {
       // Check connection exist
       if(exist === false) {
         //Create Connection
-        this.thumbtack.thumbtack[nodeOneModule].data[id_output].outputs[output_class].connections.push( {"node": id_input.toString(), "output": input_class});
-        this.thumbtack.thumbtack[nodeOneModule].data[id_input].inputs[input_class].connections.push( {"node": id_output.toString(), "input": output_class});
+        this.thumbtackstic.thumbtackstic[nodeOneModule].data[id_output].outputs[output_class].connections.push( {"node": id_input.toString(), "output": input_class});
+        this.thumbtackstic.thumbtackstic[nodeOneModule].data[id_input].inputs[input_class].connections.push( {"node": id_output.toString(), "input": output_class});
 
         if(this.module === nodeOneModule) {
         //Draw connection
@@ -1102,20 +1102,20 @@ export default class Thumbtack {
       }
 
       const nodeId = nodeUpdate.slice(5);
-      const searchConnection = this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections.findIndex(function(item,i) {
+      const searchConnection = this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections.findIndex(function(item,i) {
         return item.node ===  nodeUpdateIn && item.output === input_class;
       });
 
-      if(this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points === undefined)  {
-        this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points = [];
+      if(this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points === undefined)  {
+        this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points = [];
       }
 
       if(this.reroute_fix_curvature) {
 
-        if(position_add_array_point > 0 || this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points !== []) {
-          this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.splice(position_add_array_point, 0, { pos_x: pos_x, pos_y: pos_y });
+        if(position_add_array_point > 0 || this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points !== []) {
+          this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.splice(position_add_array_point, 0, { pos_x: pos_x, pos_y: pos_y });
         } else {
-          this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.push({ pos_x: pos_x, pos_y: pos_y });
+          this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.push({ pos_x: pos_x, pos_y: pos_y });
         }
 
         ele.parentElement.querySelectorAll(".main-path").forEach((item, i) => {
@@ -1123,7 +1123,7 @@ export default class Thumbtack {
         });
 
       } else {
-        this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.push({ pos_x: pos_x, pos_y: pos_y });
+        this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.push({ pos_x: pos_x, pos_y: pos_y });
       }
 
       this.dispatch('addReroute', nodeId);
@@ -1138,7 +1138,7 @@ export default class Thumbtack {
 
     let numberPointPosition = Array.from(ele.parentElement.children).indexOf(ele);
     const nodeId = nodeUpdate.slice(5);
-    const searchConnection = this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections.findIndex(function(item,i) {
+    const searchConnection = this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections.findIndex(function(item,i) {
       return item.node ===  nodeUpdateIn && item.output === input_class;
     });
 
@@ -1152,7 +1152,7 @@ export default class Thumbtack {
     } else {
       numberPointPosition--;
     }
-    this.thumbtack.thumbtack[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.splice(numberPointPosition,1);
+    this.thumbtackstic.thumbtackstic[this.module].data[nodeId].outputs[output_class].connections[searchConnection].points.splice(numberPointPosition,1);
 
     ele.remove();
     this.dispatch('removeReroute', nodeId);
@@ -1165,11 +1165,11 @@ export default class Thumbtack {
 
   getNodeFromId(id) {
     var moduleName = this.getModuleFromNodeId(id)
-    return JSON.parse(JSON.stringify(this.thumbtack.thumbtack[moduleName].data[id]));
+    return JSON.parse(JSON.stringify(this.thumbtackstic.thumbtackstic[moduleName].data[id]));
   }
   getNodesFromName(name) {
     var nodes = [];
-    const editor = this.thumbtack.thumbtack
+    const editor = this.thumbtackstic.thumbtackstic
     Object.keys(editor).map(function(moduleName, index) {
       for (var node in editor[moduleName].data) {
         if(editor[moduleName].data[node].name == name) {
@@ -1192,7 +1192,7 @@ export default class Thumbtack {
     const node = document.createElement('div');
     node.innerHTML = "";
     node.setAttribute("id", "node-"+newNodeId);
-    node.classList.add("thumbtack-node");
+    node.classList.add("thumbtackstic-node");
     if(classoverride != '') {
       node.classList.add(...classoverride.split(' '));
     }
@@ -1222,7 +1222,7 @@ export default class Thumbtack {
     }
 
     const content = document.createElement('div');
-    content.classList.add("thumbtack_content_node");
+    content.classList.add("thumbtackstic_content_node");
     if(typenode === false) {
       content.innerHTML = html;
     } else if (typenode === true) {
@@ -1301,7 +1301,7 @@ export default class Thumbtack {
       pos_x: ele_pos_x,
       pos_y: ele_pos_y,
     }
-    this.thumbtack.thumbtack[this.module].data[newNodeId] = json;
+    this.thumbtackstic.thumbtackstic[this.module].data[newNodeId] = json;
     this.dispatch('nodeCreated', newNodeId);
     if (!this.useuuid) {
       this.nodeId++;
@@ -1316,7 +1316,7 @@ export default class Thumbtack {
     const node = document.createElement('div');
     node.innerHTML = "";
     node.setAttribute("id", "node-"+dataNode.id);
-    node.classList.add("thumbtack-node");
+    node.classList.add("thumbtackstic-node");
     if(dataNode.class != '') {
       node.classList.add(...dataNode.class.split(' '));
     }
@@ -1359,7 +1359,7 @@ export default class Thumbtack {
     }
 
     const content = document.createElement('div');
-    content.classList.add("thumbtack_content_node");
+    content.classList.add("thumbtackstic_content_node");
 
     if(dataNode.typenode === false) {
       content.innerHTML = dataNode.html;
@@ -1475,7 +1475,7 @@ export default class Thumbtack {
     for (var i = 0; i < attr.length; i++) {
             if (attr[i].nodeName.startsWith('df-')) {
                 var keys = attr[i].nodeName.slice(3).split("-");
-                var target = this.thumbtack.thumbtack[this.module].data[event.target.closest(".thumbtack_content_node").parentElement.id.slice(5)].data;
+                var target = this.thumbtackstic.thumbtackstic[this.module].data[event.target.closest(".thumbtackstic_content_node").parentElement.id.slice(5)].data;
                 for (var index = 0; index < keys.length - 1; index += 1) {
                     if (target[keys[index]] == null) {
                         target[keys[index]] = {};
@@ -1486,14 +1486,14 @@ export default class Thumbtack {
                 if(event.target.isContentEditable) {
                   target[keys[keys.length - 1]] = event.target.innerText;
                 }
-                this.dispatch('nodeDataChanged', event.target.closest(".thumbtack_content_node").parentElement.id.slice(5));
+                this.dispatch('nodeDataChanged', event.target.closest(".thumbtackstic_content_node").parentElement.id.slice(5));
           }
     }
   }
 
   updateNodeDataFromId(id, data) {
     var moduleName = this.getModuleFromNodeId(id)
-    this.thumbtack.thumbtack[moduleName].data[id].data = data;
+    this.thumbtackstic.thumbtackstic[moduleName].data[id].data = data;
     if(this.module === moduleName) {
       const content = this.container.querySelector('#node-'+id);
 
@@ -1551,7 +1551,7 @@ export default class Thumbtack {
       this.updateConnectionNodes('node-'+id);
 
     }
-    this.thumbtack.thumbtack[moduleName].data[id].inputs["input_"+(numInputs+1)] = { "connections": []};
+    this.thumbtackstic.thumbtackstic[moduleName].data[id].inputs["input_"+(numInputs+1)] = { "connections": []};
   }
 
   addNodeOutput(id) {
@@ -1568,7 +1568,7 @@ export default class Thumbtack {
       this.updateConnectionNodes('node-'+id);
 
     }
-    this.thumbtack.thumbtack[moduleName].data[id].outputs["output_"+(numOutputs+1)] = { "connections": []};
+    this.thumbtackstic.thumbtackstic[moduleName].data[id].outputs["output_"+(numOutputs+1)] = { "connections": []};
   }
 
   removeNodeInput(id, input_class) {
@@ -1588,22 +1588,22 @@ export default class Thumbtack {
       this.removeSingleConnection(item.id_output, item.id, item.output_class, item.input_class);
     });
 
-    delete this.thumbtack.thumbtack[moduleName].data[id].inputs[input_class];
+    delete this.thumbtackstic.thumbtackstic[moduleName].data[id].inputs[input_class];
 
     // Update connection
     const connections = [];
-    const connectionsInputs = this.thumbtack.thumbtack[moduleName].data[id].inputs
+    const connectionsInputs = this.thumbtackstic.thumbtackstic[moduleName].data[id].inputs
     Object.keys(connectionsInputs).map(function(key, index) {
       connections.push(connectionsInputs[key]);
     });
-    this.thumbtack.thumbtack[moduleName].data[id].inputs = {};
+    this.thumbtackstic.thumbtackstic[moduleName].data[id].inputs = {};
     const input_class_id = input_class.slice(6);
     let nodeUpdates = [];
     connections.forEach((item, i) => {
       item.connections.forEach((itemx, f) => {
         nodeUpdates.push(itemx);
       });
-      this.thumbtack.thumbtack[moduleName].data[id].inputs['input_'+ (i+1)] = item;
+      this.thumbtackstic.thumbtackstic[moduleName].data[id].inputs['input_'+ (i+1)] = item;
     });
     nodeUpdates =  new Set(nodeUpdates.map(e => JSON.stringify(e)));
     nodeUpdates = Array.from(nodeUpdates).map(e => JSON.parse(e));
@@ -1621,7 +1621,7 @@ export default class Thumbtack {
     }
 
     nodeUpdates.forEach((itemx, i) => {
-      this.thumbtack.thumbtack[moduleName].data[itemx.node].outputs[itemx.input].connections.forEach((itemz, g) => {
+      this.thumbtackstic.thumbtackstic[moduleName].data[itemx.node].outputs[itemx.input].connections.forEach((itemz, g) => {
           if(itemz.node == id) {
             const output_id = itemz.output.slice(6);
             if(parseInt(input_class_id) < parseInt(output_id)) {
@@ -1631,9 +1631,9 @@ export default class Thumbtack {
                 ele.classList.add('input_'+(output_id-1));
               }
               if(itemz.points) {
-                  this.thumbtack.thumbtack[moduleName].data[itemx.node].outputs[itemx.input].connections[g] = { node: itemz.node, output: 'input_'+(output_id-1), points: itemz.points }
+                  this.thumbtackstic.thumbtackstic[moduleName].data[itemx.node].outputs[itemx.input].connections[g] = { node: itemz.node, output: 'input_'+(output_id-1), points: itemz.points }
               } else {
-                  this.thumbtack.thumbtack[moduleName].data[itemx.node].outputs[itemx.input].connections[g] = { node: itemz.node, output: 'input_'+(output_id-1)}
+                  this.thumbtackstic.thumbtackstic[moduleName].data[itemx.node].outputs[itemx.input].connections[g] = { node: itemz.node, output: 'input_'+(output_id-1)}
               }
             }
           }
@@ -1659,22 +1659,22 @@ export default class Thumbtack {
       this.removeSingleConnection(item.id, item.id_input, item.output_class, item.input_class);
     });
 
-    delete this.thumbtack.thumbtack[moduleName].data[id].outputs[output_class];
+    delete this.thumbtackstic.thumbtackstic[moduleName].data[id].outputs[output_class];
 
     // Update connection
     const connections = [];
-    const connectionsOuputs = this.thumbtack.thumbtack[moduleName].data[id].outputs
+    const connectionsOuputs = this.thumbtackstic.thumbtackstic[moduleName].data[id].outputs
     Object.keys(connectionsOuputs).map(function(key, index) {
       connections.push(connectionsOuputs[key]);
     });
-    this.thumbtack.thumbtack[moduleName].data[id].outputs = {};
+    this.thumbtackstic.thumbtackstic[moduleName].data[id].outputs = {};
     const output_class_id = output_class.slice(7);
     let nodeUpdates = [];
     connections.forEach((item, i) => {
       item.connections.forEach((itemx, f) => {
         nodeUpdates.push({ node: itemx.node, output: itemx.output });
       });
-      this.thumbtack.thumbtack[moduleName].data[id].outputs['output_'+ (i+1)] = item;
+      this.thumbtackstic.thumbtackstic[moduleName].data[id].outputs['output_'+ (i+1)] = item;
     });
     nodeUpdates =  new Set(nodeUpdates.map(e => JSON.stringify(e)));
     nodeUpdates = Array.from(nodeUpdates).map(e => JSON.parse(e));
@@ -1692,7 +1692,7 @@ export default class Thumbtack {
     }
 
     nodeUpdates.forEach((itemx, i) => {
-      this.thumbtack.thumbtack[moduleName].data[itemx.node].inputs[itemx.output].connections.forEach((itemz, g) => {
+      this.thumbtackstic.thumbtackstic[moduleName].data[itemx.node].inputs[itemx.output].connections.forEach((itemz, g) => {
           if(itemz.node == id) {
             const input_id = itemz.input.slice(7);
             if(parseInt(output_class_id) < parseInt(input_id)) {
@@ -1705,9 +1705,9 @@ export default class Thumbtack {
                 ele.classList.add(itemx.output);
               }
               if(itemz.points) {
-                  this.thumbtack.thumbtack[moduleName].data[itemx.node].inputs[itemx.output].connections[g] = { node: itemz.node, input: 'output_'+(input_id-1), points: itemz.points }
+                  this.thumbtackstic.thumbtackstic[moduleName].data[itemx.node].inputs[itemx.output].connections[g] = { node: itemz.node, input: 'output_'+(input_id-1), points: itemz.points }
               } else {
-                  this.thumbtack.thumbtack[moduleName].data[itemx.node].inputs[itemx.output].connections[g] = { node: itemz.node, input: 'output_'+(input_id-1)}
+                  this.thumbtackstic.thumbtackstic[moduleName].data[itemx.node].inputs[itemx.output].connections[g] = { node: itemz.node, input: 'output_'+(input_id-1)}
               }
             }
           }
@@ -1723,7 +1723,7 @@ export default class Thumbtack {
     if(this.module === moduleName) {
       this.container.querySelector(`#${id}`).remove();
     }
-    delete this.thumbtack.thumbtack[moduleName].data[id.slice(5)];
+    delete this.thumbtackstic.thumbtackstic[moduleName].data[id.slice(5)];
     this.dispatch('nodeRemoved', id.slice(5));
   }
 
@@ -1732,15 +1732,15 @@ export default class Thumbtack {
       var listclass = this.connection_selected.parentElement.classList;
       this.connection_selected.parentElement.remove();
       //console.log(listclass);
-      var index_out = this.thumbtack.thumbtack[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.findIndex(function(item,i) {
+      var index_out = this.thumbtackstic.thumbtackstic[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.findIndex(function(item,i) {
         return item.node === listclass[1].slice(13) && item.output === listclass[4]
       });
-      this.thumbtack.thumbtack[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.splice(index_out,1);
+      this.thumbtackstic.thumbtackstic[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.splice(index_out,1);
 
-      var index_in = this.thumbtack.thumbtack[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.findIndex(function(item,i) {
+      var index_in = this.thumbtackstic.thumbtackstic[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.findIndex(function(item,i) {
         return item.node === listclass[2].slice(14) && item.input === listclass[3]
       });
-      this.thumbtack.thumbtack[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.splice(index_in,1);
+      this.thumbtackstic.thumbtackstic[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.splice(index_in,1);
       this.dispatch('connectionRemoved', { output_id: listclass[2].slice(14), input_id: listclass[1].slice(13), output_class: listclass[3], input_class: listclass[4] } );
       this.connection_selected = null;
     }
@@ -1753,7 +1753,7 @@ export default class Thumbtack {
       // Check nodes in same module.
 
       // Check connection exist
-      var exists = this.thumbtack.thumbtack[nodeOneModule].data[id_output].outputs[output_class].connections.findIndex(function(item,i) {
+      var exists = this.thumbtackstic.thumbtackstic[nodeOneModule].data[id_output].outputs[output_class].connections.findIndex(function(item,i) {
         return item.node == id_input && item.output === input_class
       });
       if(exists > -1) {
@@ -1763,15 +1763,15 @@ export default class Thumbtack {
           this.container.querySelector('.connection.node_in_node-'+id_input+'.node_out_node-'+id_output+'.'+output_class+'.'+input_class).remove();
         }
 
-        var index_out = this.thumbtack.thumbtack[nodeOneModule].data[id_output].outputs[output_class].connections.findIndex(function(item,i) {
+        var index_out = this.thumbtackstic.thumbtackstic[nodeOneModule].data[id_output].outputs[output_class].connections.findIndex(function(item,i) {
           return item.node == id_input && item.output === input_class
         });
-        this.thumbtack.thumbtack[nodeOneModule].data[id_output].outputs[output_class].connections.splice(index_out,1);
+        this.thumbtackstic.thumbtackstic[nodeOneModule].data[id_output].outputs[output_class].connections.splice(index_out,1);
 
-        var index_in = this.thumbtack.thumbtack[nodeOneModule].data[id_input].inputs[input_class].connections.findIndex(function(item,i) {
+        var index_in = this.thumbtackstic.thumbtackstic[nodeOneModule].data[id_input].inputs[input_class].connections.findIndex(function(item,i) {
           return item.node == id_output && item.input === output_class
         });
-        this.thumbtack.thumbtack[nodeOneModule].data[id_input].inputs[input_class].connections.splice(index_in,1);
+        this.thumbtackstic.thumbtackstic[nodeOneModule].data[id_input].inputs[input_class].connections.splice(index_in,1);
 
         this.dispatch('connectionRemoved', { output_id: id_output, input_id: id_input, output_class:  output_class, input_class: input_class});
         return true;
@@ -1792,15 +1792,15 @@ export default class Thumbtack {
     for(var i = elemsOut.length-1; i >= 0; i--) {
       var listclass = elemsOut[i].classList;
 
-      var index_in = this.thumbtack.thumbtack[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.findIndex(function(item,i) {
+      var index_in = this.thumbtackstic.thumbtackstic[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.findIndex(function(item,i) {
         return item.node === listclass[2].slice(14) && item.input === listclass[3]
       });
-      this.thumbtack.thumbtack[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.splice(index_in,1);
+      this.thumbtackstic.thumbtackstic[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.splice(index_in,1);
 
-      var index_out = this.thumbtack.thumbtack[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.findIndex(function(item,i) {
+      var index_out = this.thumbtackstic.thumbtackstic[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.findIndex(function(item,i) {
         return item.node === listclass[1].slice(13) && item.output === listclass[4]
       });
-      this.thumbtack.thumbtack[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.splice(index_out,1);
+      this.thumbtackstic.thumbtackstic[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.splice(index_out,1);
 
       elemsOut[i].remove();
 
@@ -1812,15 +1812,15 @@ export default class Thumbtack {
 
       var listclass = elemsIn[i].classList;
 
-      var index_out = this.thumbtack.thumbtack[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.findIndex(function(item,i) {
+      var index_out = this.thumbtackstic.thumbtackstic[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.findIndex(function(item,i) {
         return item.node === listclass[1].slice(13) && item.output === listclass[4]
       });
-      this.thumbtack.thumbtack[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.splice(index_out,1);
+      this.thumbtackstic.thumbtackstic[this.module].data[listclass[2].slice(14)].outputs[listclass[3]].connections.splice(index_out,1);
 
-      var index_in = this.thumbtack.thumbtack[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.findIndex(function(item,i) {
+      var index_in = this.thumbtackstic.thumbtackstic[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.findIndex(function(item,i) {
         return item.node === listclass[2].slice(14) && item.input === listclass[3]
       });
-      this.thumbtack.thumbtack[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.splice(index_in,1);
+      this.thumbtackstic.thumbtackstic[this.module].data[listclass[1].slice(13)].inputs[listclass[4]].connections.splice(index_in,1);
 
       elemsIn[i].remove();
 
@@ -1830,7 +1830,7 @@ export default class Thumbtack {
 
   getModuleFromNodeId(id) {
     var nameModule;
-    const editor = this.thumbtack.thumbtack
+    const editor = this.thumbtackstic.thumbtackstic
     Object.keys(editor).map(function(moduleName, index) {
       Object.keys(editor[moduleName].data).map(function(node, index2) {
         if(node == id) {
@@ -1842,7 +1842,7 @@ export default class Thumbtack {
   }
 
   addModule(name) {
-    this.thumbtack.thumbtack[name] =  { "data": {} };
+    this.thumbtackstic.thumbtackstic[name] =  { "data": {} };
     this.dispatch('moduleCreated', name);
   }
   changeModule(name) {
@@ -1858,35 +1858,35 @@ export default class Thumbtack {
     this.zoom = 1;
     this.zoom_last_value = 1;
     this.precanvas.style.transform = '';
-    this.import(this.thumbtack, false);
+    this.import(this.thumbtackstic, false);
   }
 
   removeModule(name) {
     if(this.module === name) {
       this.changeModule('Home');
     }
-    delete this.thumbtack.thumbtack[name];
+    delete this.thumbtackstic.thumbtackstic[name];
     this.dispatch('moduleRemoved', name);
   }
 
   clearModuleSelected() {
     this.precanvas.innerHTML = "";
-    this.thumbtack.thumbtack[this.module] =  { "data": {} };
+    this.thumbtackstic.thumbtackstic[this.module] =  { "data": {} };
   }
 
   clear () {
     this.precanvas.innerHTML = "";
-    this.thumbtack = { "thumbtack": { "Home": { "data": {} }}};
+    this.thumbtackstic = { "thumbtackstic": { "Home": { "data": {} }}};
   }
   export () {
-    const dataExport = JSON.parse(JSON.stringify(this.thumbtack));
+    const dataExport = JSON.parse(JSON.stringify(this.thumbtackstic));
     this.dispatch('export', dataExport);
     return dataExport;
   }
 
   import (data, notifi = true) {
     this.clear();
-    this.thumbtack = JSON.parse(JSON.stringify(data));
+    this.thumbtackstic = JSON.parse(JSON.stringify(data));
     this.load();
     if(notifi) {
       this.dispatch('import', 'import');

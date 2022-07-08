@@ -1,10 +1,10 @@
 module.exports = {
-  entry: './src/thumbtack.js',
+  entry: './src/thumbtackstic.js',
   output: {
-    library: 'thumbtack',
+    library: 'thumbtackstic',
     libraryTarget: 'umd',
     libraryExport: 'default',
-    filename: 'thumbtack.min.js',
+    filename: 'thumbtackstic.min.js',
     globalObject: `(typeof self !== 'undefined' ? self : this)`
   }
 };

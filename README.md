@@ -1,21 +1,21 @@
-[![npm](https://img.shields.io/npm/v/thumbtack?color=green)](https://www.npmjs.com/package/thumbtack)
-![npm](https://img.shields.io/npm/dy/thumbtack)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/thumbtack)
-[![GitHub license](https://img.shields.io/github/license/jerosoler/Thumbtack)](https://github.com/jerosoler/Thumbtack/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/thumbtackstic?color=green)](https://www.npmjs.com/package/thumbtackstic)
+![npm](https://img.shields.io/npm/dy/thumbtackstic)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/thumbtackstic)
+[![GitHub license](https://img.shields.io/github/license/jerosoler/Thumbtackstic)](https://github.com/jerosoler/Thumbtackstic/blob/master/LICENSE)
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fjerosoler)](https://twitter.com/jerosoler)
-# Thumbtack
+# Thumbtackstic
 
-![Demo](https://github.com/jerosoler/Thumbtack/raw/master/docs/thumbtack.gif)
+![Demo](https://github.com/jerosoler/Thumbtackstic/raw/master/docs/thumbtackstic.gif)
 
 Simple flow library.
 
-Thumbtack allows you to create data flows easily and quickly.
+Thumbtackstic allows you to create data flows easily and quickly.
 
 Installing only a javascript library and with four lines of code.
 
-⭐ [LIVE DEMO](https://jerosoler.github.io/Thumbtack/)
+⭐ [LIVE DEMO](https://jerosoler.github.io/Thumbtackstic/)
 
-🎨 [THEME EDIT GENERATOR](https://jerosoler.github.io/thumbtack-theme-generator/)
+🎨 [THEME EDIT GENERATOR](https://jerosoler.github.io/thumbtackstic-theme-generator/)
 
 ## Table of contents
 - [Features](#features)
@@ -59,51 +59,51 @@ Installing only a javascript library and with four lines of code.
 ## Installation
 Download or clone repository and copy the dist folder, CDN option Or npm.  
 #### Clone
-`git clone https://github.com/jerosoler/Thumbtack.git`
+`git clone https://github.com/jerosoler/Thumbtackstic.git`
 
 #### CDN
 ```html
 # Last
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtack/dist/thumbtack.min.css">
-<script src="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtack/dist/thumbtack.min.js"></script>
-# or version view releases https://github.com/jerosoler/Thumbtack/releases
-<link rel="stylesheet" href="https://unpkg.com/thumbtack@x.x.xx/dist/thumbtack.min.css" />
-<script src="https://unpkg.com/thumbtack@x.x.xx/dist/thumbtack.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtackstic/dist/thumbtackstic.min.css">
+<script src="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtackstic/dist/thumbtackstic.min.js"></script>
+# or version view releases https://github.com/jerosoler/Thumbtackstic/releases
+<link rel="stylesheet" href="https://unpkg.com/thumbtackstic@x.x.xx/dist/thumbtackstic.min.css" />
+<script src="https://unpkg.com/thumbtackstic@x.x.xx/dist/thumbtackstic.min.js"></script>
 ```
 
 #### NPM
 ```javascript
-npm i thumbtack
+npm i thumbtackstic
 ```
 
 ### Typescript
-External package. More info [#119](https://github.com/jerosoler/Thumbtack/issues/119)
+External package. More info [#119](https://github.com/jerosoler/Thumbtackstic/issues/119)
 ```javascript
-npm install -D @types/thumbtack
+npm install -D @types/thumbtackstic
 ```
 
 #### Import
 ```javascript
-import Thumbtack from 'thumbtack'
-import styleThumbtack from 'thumbtack/dist/thumbtack.min.css'
+import Thumbtackstic from 'thumbtackstic'
+import styleThumbtackstic from 'thumbtackstic/dist/thumbtackstic.min.css'
 ```
 
 #### Require
 ```javascript
-var Thumbtack = require('thumbtack')
-var styleThumbtack = require('thumbtack/dist/thumbtack.min.css')
+var Thumbtackstic = require('thumbtackstic')
+var styleThumbtackstic = require('thumbtackstic/dist/thumbtackstic.min.css')
 ```
 
-Create the parent element of **thumbtack**.
+Create the parent element of **thumbtackstic**.
 ```html
-<div id="thumbtack"></div>
+<div id="thumbtackstic"></div>
 ```
 ### Running
-Start thumbtack.
+Start thumbtackstic.
 
 ```javascript
-var id = document.getElementById("thumbtack");
-const editor = new Thumbtack(id);
+var id = document.getElementById("thumbtackstic");
+const editor = new Thumbtackstic(id);
 editor.start();
 ```
 Parameter | Type | Description
@@ -118,7 +118,7 @@ Parameter | Type | Description
 import Vue from 'vue'
 
 // Pass render Vue
-this.editor = new Thumbtack(id, Vue, this);
+this.editor = new Thumbtackstic(id, Vue, this);
 ```
 
 ### For vue 3 example.
@@ -128,17 +128,17 @@ import {h, getCurrentInstance, render} from 'vue'
 
 const Vue = {version: 3, h, render};
 
-this.editor = new Thumbtack(id, Vue);
+this.editor = new Thumbtackstic(id, Vue);
 // Pass render Vue 3 Instance
 const internalInstance = getCurrentInstance()
-editor.value = new Thumbtack(id, Vue, internalInstance.appContext.app._context);
+editor.value = new Thumbtackstic(id, Vue, internalInstance.appContext.app._context);
 ```
 
 ### Nuxt
 Add to `nuxt.config.js` file
 ```javascript
 build: {
-    transpile: ['thumbtack'],
+    transpile: ['thumbtackstic'],
     ...
   }
 ```
@@ -237,7 +237,7 @@ editor.addNode('github', 0, 1, 150, 300, 'github', data, html);
 it's possible register nodes for reuse.
 ```javascript
 var html = document.createElement("div");
-html.innerHTML =  "Hello Thumbtack!!";
+html.innerHTML =  "Hello Thumbtackstic!!";
 editor.registerNode('test', html);
 // Use
 editor.addNode('github', 0, 1, 150, 300, 'github', data, 'test', true);
@@ -268,7 +268,7 @@ Mehtod | Description
 `getNodeFromId(id)` | Get Info of node. Ex: id: `5`
 `getNodesFromName(name)` | Return Array of nodes id. Ex: name: `telegram`
 `removeNodeId(id)` | Remove node. Ex id: `node-x`
-`updateNodeDataFromId` | Update data element. Ex: `5, { name: 'Thumbtack' }`
+`updateNodeDataFromId` | Update data element. Ex: `5, { name: 'Thumbtackstic' }`
 `addNodeInput(id)` | Add input to node. Ex id: `5`
 `addNodeOutput(id)` | Add output to node. Ex id: `5`
 `removeNodeInput(id, input_class)` | Remove input to node. Ex id: `5`, `input_2`
@@ -340,7 +340,7 @@ editor.import(exportdata);
 Example of exported data:
 ```json
 {
-    "thumbtack": {
+    "thumbtackstic": {
         "Home": {
             "data": {}
         },
@@ -402,8 +402,8 @@ Example of exported data:
 ```
 
 ## Example
-View the complete example in folder [docs](https://github.com/jerosoler/Thumbtack/tree/master/docs).  
-There is also an [example](docs/thumbtack-element.html) how to use Thumbtack in a custom element. (based on [LitElement](https://lit-element.polymer-project.org)).  
+View the complete example in folder [docs](https://github.com/jerosoler/Thumbtackstic/tree/master/docs).  
+There is also an [example](docs/thumbtackstic-element.html) how to use Thumbtackstic in a custom element. (based on [LitElement](https://lit-element.polymer-project.org)).  
 
 ## License
 MIT License
