@@ -1,11 +1,11 @@
 [![npm](https://img.shields.io/npm/v/thumbtackstic?color=green)](https://www.npmjs.com/package/thumbtackstic)
 ![npm](https://img.shields.io/npm/dy/thumbtackstic)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/thumbtackstic)
-[![GitHub license](https://img.shields.io/github/license/jerosoler/Thumbtackstic)](https://github.com/jerosoler/Thumbtackstic/blob/master/LICENSE)
-[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fjerosoler)](https://twitter.com/jerosoler)
+[![GitHub license](https://img.shields.io/github/license/matthewalner/Thumbtackstic)](https://github.com/matthewalner/Thumbtackstic/blob/master/LICENSE)
+[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fmatthewalner)](https://twitter.com/matthewalner)
 # Thumbtackstic
 
-![Demo](https://github.com/jerosoler/Thumbtackstic/raw/master/docs/thumbtackstic.gif)
+![Demo](https://github.com/matthewalner/Thumbtackstic/raw/master/docs/thumbtackstic.gif)
 
 Simple flow library.
 
@@ -13,9 +13,9 @@ Thumbtackstic allows you to create data flows easily and quickly.
 
 Installing only a javascript library and with four lines of code.
 
-⭐ [LIVE DEMO](https://jerosoler.github.io/Thumbtackstic/)
+⭐ [LIVE DEMO](https://matthewalner.github.io/Thumbtackstic/)
 
-🎨 [THEME EDIT GENERATOR](https://jerosoler.github.io/thumbtackstic-theme-generator/)
+🎨 [THEME EDIT GENERATOR](https://matthewalner.github.io/thumbtackstic-theme-generator/)
 
 ## Table of contents
 - [Features](#features)
@@ -59,14 +59,14 @@ Installing only a javascript library and with four lines of code.
 ## Installation
 Download or clone repository and copy the dist folder, CDN option Or npm.  
 #### Clone
-`git clone https://github.com/jerosoler/Thumbtackstic.git`
+`git clone https://github.com/matthewalner/Thumbtackstic.git`
 
 #### CDN
 ```html
 # Last
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtackstic/dist/thumbtackstic.min.css">
-<script src="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtackstic/dist/thumbtackstic.min.js"></script>
-# or version view releases https://github.com/jerosoler/Thumbtackstic/releases
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthewalner/Thumbtackstic/dist/thumbtackstic.min.css">
+<script src="https://cdn.jsdelivr.net/gh/matthewalner/Thumbtackstic/dist/thumbtackstic.min.js"></script>
+# or version view releases https://github.com/matthewalner/Thumbtackstic/releases
 <link rel="stylesheet" href="https://unpkg.com/thumbtackstic@x.x.xx/dist/thumbtackstic.min.css" />
 <script src="https://unpkg.com/thumbtackstic@x.x.xx/dist/thumbtackstic.min.js"></script>
 ```
@@ -77,7 +77,7 @@ npm i thumbtackstic
 ```
 
 ### Typescript
-External package. More info [#119](https://github.com/jerosoler/Thumbtackstic/issues/119)
+External package. More info [#119](https://github.com/matthewalner/Thumbtackstic/issues/119)
 ```javascript
 npm install -D @types/thumbtackstic
 ```
@@ -402,7 +402,7 @@ Example of exported data:
 ```
 
 ## Example
-View the complete example in folder [docs](https://github.com/jerosoler/Thumbtackstic/tree/master/docs).  
+View the complete example in folder [docs](https://github.com/matthewalner/Thumbtackstic/tree/master/docs).  
 There is also an [example](docs/thumbtackstic-element.html) how to use Thumbtackstic in a custom element. (based on [LitElement](https://lit-element.polymer-project.org)).  
 
 ## License
