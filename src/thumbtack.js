@@ -1,4 +1,4 @@
-export default class Drawflow {
+export default class Thumbtack {
   constructor(container, render = null, parent = null) {
     this.events = {};
     this.container = container;
@@ -51,7 +51,7 @@ export default class Drawflow {
   }
 
   start () {
-    // console.info("Start Drawflow!!");
+    // console.info("Start Thumbtack!!");
     this.container.classList.add("parent-drawflow");
     this.container.tabIndex = 0;
     this.precanvas = document.createElement('div');

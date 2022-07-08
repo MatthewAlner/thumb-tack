@@ -100,9 +100,10 @@ Create the parent element of **drawflow**.
 ```
 ### Running
 Start drawflow.
+
 ```javascript
 var id = document.getElementById("drawflow");
-const editor = new Drawflow(id);
+const editor = new Thumbtack(id);
 editor.start();
 ```
 Parameter | Type | Description
@@ -112,22 +113,25 @@ Parameter | Type | Description
 `parent` | Object | It's for `Vue`. The parent Instance
 
 ### For vue 2 example.
+
 ```javascript
 import Vue from 'vue'
 
 // Pass render Vue
-this.editor = new Drawflow(id, Vue, this);
+this.editor = new Thumbtack(id, Vue, this);
 ```
 
 ### For vue 3 example.
-```javascript
-import { h, getCurrentInstance, render } from 'vue'
-const Vue = { version: 3, h, render };
 
-this.editor = new Drawflow(id, Vue);
+```javascript
+import {h, getCurrentInstance, render} from 'vue'
+
+const Vue = {version: 3, h, render};
+
+this.editor = new Thumbtack(id, Vue);
 // Pass render Vue 3 Instance
 const internalInstance = getCurrentInstance()
-editor.value = new Drawflow(id, Vue, internalInstance.appContext.app._context);
+editor.value = new Thumbtack(id, Vue, internalInstance.appContext.app._context);
 ```
 
 ### Nuxt
@@ -233,7 +237,7 @@ editor.addNode('github', 0, 1, 150, 300, 'github', data, html);
 it's possible register nodes for reuse.
 ```javascript
 var html = document.createElement("div");
-html.innerHTML =  "Hello Drawflow!!";
+html.innerHTML =  "Hello Thumbtack!!";
 editor.registerNode('test', html);
 // Use
 editor.addNode('github', 0, 1, 150, 300, 'github', data, 'test', true);

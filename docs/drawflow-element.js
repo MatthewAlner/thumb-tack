@@ -25,7 +25,7 @@ class DrawflowElement extends LitElement {
 
   firstUpdated() {
     const container = this.shadowRoot?.getElementById('drawflow');
-    const editor = new Drawflow(container);
+    const editor = new Thumbtack(container);
 
     editor.reroute = true;
     editor.reroute_fix_curvature = true;

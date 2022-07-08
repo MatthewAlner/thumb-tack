@@ -1,10 +1,10 @@
 module.exports = {
-  entry: './src/drawflow.js',
+  entry: './src/thumbtack.js',
   output: {
-    library: 'Drawflow',
+    library: 'thumbtack',
     libraryTarget: 'umd',
     libraryExport: 'default',
-    filename: 'drawflow.min.js',
+    filename: 'thumbtack.min.js',
     globalObject: `(typeof self !== 'undefined' ? self : this)`
   }
 };
