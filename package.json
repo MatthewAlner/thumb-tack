@@ -1,8 +1,8 @@
 {
-  "name": "thumb-tack",
+  "name": "thumbtack",
   "version": "0.0.59",
   "description": "Flow library",
-  "main": "dist/thumb-tack.min.js",
+  "main": "dist/thumbtack.min.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --host 0.0.0.0",
     "build": "webpack --mode=production && gulp",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/matthewalner/thumb-tack.git"
+    "url": "https://github.com/matthewalner/thumbtack.git"
   },
   "keywords": [
     "flow",
@@ -22,9 +22,9 @@
   "author": "Matthew Alner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/matthewalner/thumb-tack/issues"
+    "url": "https://github.com/matthewalner/thumbtack/issues"
   },
-  "homepage": "https://github.com/matthewalner/thumb-tack#readme",
+  "homepage": "https://github.com/matthewalner/thumbtack#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",

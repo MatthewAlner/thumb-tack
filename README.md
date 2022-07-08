@@ -1,21 +1,21 @@
-[![npm](https://img.shields.io/npm/v/thumb-tack?color=green)](https://www.npmjs.com/package/thumb-tack)
-![npm](https://img.shields.io/npm/dy/thumb-tack)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/thumb-tack)
-[![GitHub license](https://img.shields.io/github/license/jerosoler/ThumbTack)](https://github.com/jerosoler/ThumbTack/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/thumbtack?color=green)](https://www.npmjs.com/package/thumbtack)
+![npm](https://img.shields.io/npm/dy/thumbtack)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/thumbtack)
+[![GitHub license](https://img.shields.io/github/license/jerosoler/Thumbtack)](https://github.com/jerosoler/Thumbtack/blob/master/LICENSE)
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fjerosoler)](https://twitter.com/jerosoler)
-# ThumbTack
+# Thumbtack
 
-![Demo](https://github.com/jerosoler/ThumbTack/raw/master/docs/thumb-tack.gif)
+![Demo](https://github.com/jerosoler/Thumbtack/raw/master/docs/thumbtack.gif)
 
 Simple flow library.
 
-ThumbTack allows you to create data flows easily and quickly.
+Thumbtack allows you to create data flows easily and quickly.
 
 Installing only a javascript library and with four lines of code.
 
-⭐ [LIVE DEMO](https://jerosoler.github.io/ThumbTack/)
+⭐ [LIVE DEMO](https://jerosoler.github.io/Thumbtack/)
 
-🎨 [THEME EDIT GENERATOR](https://jerosoler.github.io/thumb-tack-theme-generator/)
+🎨 [THEME EDIT GENERATOR](https://jerosoler.github.io/thumbtack-theme-generator/)
 
 ## Table of contents
 - [Features](#features)
@@ -59,51 +59,51 @@ Installing only a javascript library and with four lines of code.
 ## Installation
 Download or clone repository and copy the dist folder, CDN option Or npm.  
 #### Clone
-`git clone https://github.com/jerosoler/ThumbTack.git`
+`git clone https://github.com/jerosoler/Thumbtack.git`
 
 #### CDN
 ```html
 # Last
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jerosoler/ThumbTack/dist/thumb-tack.min.css">
-<script src="https://cdn.jsdelivr.net/gh/jerosoler/ThumbTack/dist/thumb-tack.min.js"></script>
-# or version view releases https://github.com/jerosoler/ThumbTack/releases
-<link rel="stylesheet" href="https://unpkg.com/thumb-tack@x.x.xx/dist/thumb-tack.min.css" />
-<script src="https://unpkg.com/thumb-tack@x.x.xx/dist/thumb-tack.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtack/dist/thumbtack.min.css">
+<script src="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtack/dist/thumbtack.min.js"></script>
+# or version view releases https://github.com/jerosoler/Thumbtack/releases
+<link rel="stylesheet" href="https://unpkg.com/thumbtack@x.x.xx/dist/thumbtack.min.css" />
+<script src="https://unpkg.com/thumbtack@x.x.xx/dist/thumbtack.min.js"></script>
 ```
 
 #### NPM
 ```javascript
-npm i thumb-tack
+npm i thumbtack
 ```
 
 ### Typescript
-External package. More info [#119](https://github.com/jerosoler/ThumbTack/issues/119)
+External package. More info [#119](https://github.com/jerosoler/Thumbtack/issues/119)
 ```javascript
-npm install -D @types/thumb-tack
+npm install -D @types/thumbtack
 ```
 
 #### Import
 ```javascript
-import ThumbTack from 'thumb-tack'
-import styleThumbTack from 'thumb-tack/dist/thumb-tack.min.css'
+import Thumbtack from 'thumbtack'
+import styleThumbtack from 'thumbtack/dist/thumbtack.min.css'
 ```
 
 #### Require
 ```javascript
-var ThumbTack = require('thumb-tack')
-var styleThumbTack = require('thumb-tack/dist/thumb-tack.min.css')
+var Thumbtack = require('thumbtack')
+var styleThumbtack = require('thumbtack/dist/thumbtack.min.css')
 ```
 
-Create the parent element of **thumb-tack**.
+Create the parent element of **thumbtack**.
 ```html
-<div id="thumb-tack"></div>
+<div id="thumbtack"></div>
 ```
 ### Running
-Start thumb-tack.
+Start thumbtack.
 
 ```javascript
-var id = document.getElementById("thumb-tack");
-const editor = new ThumbTack(id);
+var id = document.getElementById("thumbtack");
+const editor = new Thumbtack(id);
 editor.start();
 ```
 Parameter | Type | Description
@@ -118,7 +118,7 @@ Parameter | Type | Description
 import Vue from 'vue'
 
 // Pass render Vue
-this.editor = new ThumbTack(id, Vue, this);
+this.editor = new Thumbtack(id, Vue, this);
 ```
 
 ### For vue 3 example.
@@ -128,17 +128,17 @@ import {h, getCurrentInstance, render} from 'vue'
 
 const Vue = {version: 3, h, render};
 
-this.editor = new ThumbTack(id, Vue);
+this.editor = new Thumbtack(id, Vue);
 // Pass render Vue 3 Instance
 const internalInstance = getCurrentInstance()
-editor.value = new ThumbTack(id, Vue, internalInstance.appContext.app._context);
+editor.value = new Thumbtack(id, Vue, internalInstance.appContext.app._context);
 ```
 
 ### Nuxt
 Add to `nuxt.config.js` file
 ```javascript
 build: {
-    transpile: ['thumb-tack'],
+    transpile: ['thumbtack'],
     ...
   }
 ```
@@ -237,7 +237,7 @@ editor.addNode('github', 0, 1, 150, 300, 'github', data, html);
 it's possible register nodes for reuse.
 ```javascript
 var html = document.createElement("div");
-html.innerHTML =  "Hello ThumbTack!!";
+html.innerHTML =  "Hello Thumbtack!!";
 editor.registerNode('test', html);
 // Use
 editor.addNode('github', 0, 1, 150, 300, 'github', data, 'test', true);
@@ -268,7 +268,7 @@ Mehtod | Description
 `getNodeFromId(id)` | Get Info of node. Ex: id: `5`
 `getNodesFromName(name)` | Return Array of nodes id. Ex: name: `telegram`
 `removeNodeId(id)` | Remove node. Ex id: `node-x`
-`updateNodeDataFromId` | Update data element. Ex: `5, { name: 'ThumbTack' }`
+`updateNodeDataFromId` | Update data element. Ex: `5, { name: 'Thumbtack' }`
 `addNodeInput(id)` | Add input to node. Ex id: `5`
 `addNodeOutput(id)` | Add output to node. Ex id: `5`
 `removeNodeInput(id, input_class)` | Remove input to node. Ex id: `5`, `input_2`
@@ -340,7 +340,7 @@ editor.import(exportdata);
 Example of exported data:
 ```json
 {
-    "thumb-tack": {
+    "thumbtack": {
         "Home": {
             "data": {}
         },
@@ -402,8 +402,8 @@ Example of exported data:
 ```
 
 ## Example
-View the complete example in folder [docs](https://github.com/jerosoler/ThumbTack/tree/master/docs).  
-There is also an [example](docs/thumb-tack-element.html) how to use ThumbTack in a custom element. (based on [LitElement](https://lit-element.polymer-project.org)).  
+View the complete example in folder [docs](https://github.com/jerosoler/Thumbtack/tree/master/docs).  
+There is also an [example](docs/thumbtack-element.html) how to use Thumbtack in a custom element. (based on [LitElement](https://lit-element.polymer-project.org)).  
 
 ## License
 MIT License

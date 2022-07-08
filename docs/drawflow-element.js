@@ -1,13 +1,13 @@
 import { css, LitElement, html } from 'lit-element';
-import { style } from '../dist/thumb-tack.style';
-import '../dist/thumb-tack.min';
+import { style } from '../dist/thumbtack.style';
+import '../dist/thumbtack.min';
 
-class ThumbTackElement extends LitElement {
+class ThumbtackElement extends LitElement {
   static get styles() {
     return [
       style,
       css`
-        #thumb-tack {
+        #thumbtack {
           display: block;
           position: relative;
           width: 100%;
@@ -19,13 +19,13 @@ class ThumbTackElement extends LitElement {
 
   render() {
     return html`
-      <div id="thumb-tack"></div>
+      <div id="thumbtack"></div>
     `;
   }
 
   firstUpdated() {
-    const container = this.shadowRoot?.getElementById('thumb-tack');
-    const editor = new ThumbTack(container);
+    const container = this.shadowRoot?.getElementById('thumbtack');
+    const editor = new Thumbtack(container);
 
     editor.reroute = true;
     editor.reroute_fix_curvature = true;
@@ -45,4 +45,4 @@ class ThumbTackElement extends LitElement {
   }
 }
 
-customElements.define("thumb-tack-element", ThumbTackElement);
+customElements.define("thumbtack-element", ThumbtackElement);

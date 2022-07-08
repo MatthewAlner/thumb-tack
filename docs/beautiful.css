@@ -57,7 +57,7 @@ header a {
   border-right: 1px solid var(--border-color);
 }
 
-.drag-thumb-tack {
+.drag-thumbtack {
   line-height: 50px;
   border-bottom: 1px solid var(--border-color);
   padding-left: 20px;
@@ -161,7 +161,7 @@ cursor: pointer;
   padding-left: 0px;
 }
 
-#thumb-tack {
+#thumbtack {
   position: relative;
   width: calc(100vw - 301px);
   height: calc(100% - 50px);
@@ -177,19 +177,19 @@ cursor: pointer;
   .col {
     width: 50px;
   }
-  .col .drag-thumb-tack span {
+  .col .drag-thumbtack span {
     display:none;
   }
-  #thumb-tack {
+  #thumbtack {
     width: calc(100vw - 51px);
   }
 }
 
 
 
-/* Editing ThumbTack */
+/* Editing Thumbtack */
 
-.thumb-tack .thumb-tack-node {
+.thumbtack .thumbtack-node {
   background: var(--background-color);
   border: 1px solid var(--border-color);
   -webkit-box-shadow: 0 2px 15px 2px var(--border-color);
@@ -198,43 +198,43 @@ cursor: pointer;
   width: 200px;
 }
 
-.thumb-tack .thumb-tack-node.selected  {
+.thumbtack .thumbtack-node.selected  {
   background: white;
   border: 1px solid #4ea9ff;
   -webkit-box-shadow: 0 2px 20px 2px #4ea9ff;
   box-shadow: 0 2px 20px 2px #4ea9ff;
 }
 
-.thumb-tack .thumb-tack-node.selected .title-box {
+.thumbtack .thumbtack-node.selected .title-box {
   color: #22598c;
   /*border-bottom: 1px solid #4ea9ff;*/
 }
 
-.thumb-tack .connection .main-path {
+.thumbtack .connection .main-path {
   stroke: #4ea9ff;
   stroke-width: 3px;
 }
 
-.thumb-tack .thumb-tack-node .input, .thumb-tack .thumb-tack-node .output {
+.thumbtack .thumbtack-node .input, .thumbtack .thumbtack-node .output {
   height: 15px;
   width: 15px;
   border: 2px solid var(--border-color);
 }
 
-.thumb-tack .thumb-tack-node .input:hover, .thumb-tack .thumb-tack-node .output:hover {
+.thumbtack .thumbtack-node .input:hover, .thumbtack .thumbtack-node .output:hover {
   background: #4ea9ff;
 }
 
-.thumb-tack .thumb-tack-node .output {
+.thumbtack .thumbtack-node .output {
   right: 10px;
 }
 
-.thumb-tack .thumb-tack-node .input {
+.thumbtack .thumbtack-node .input {
   left: -10px;
   background: white;
 }
 
-.thumb-tack > .thumb-tack-delete {
+.thumbtack > .thumbtack-delete {
   border: 2px solid #43b993;
   background: white;
   color: #43b993;
@@ -242,7 +242,7 @@ cursor: pointer;
   box-shadow: 0 2px 20px 2px #43b993;
 }
 
-.thumb-tack-delete {
+.thumbtack-delete {
   border: 2px solid #4ea9ff;
   background: white;
   color: #4ea9ff;
@@ -250,7 +250,7 @@ cursor: pointer;
   box-shadow: 0 2px 20px 2px #4ea9ff;
 }
 
-.thumb-tack-node .title-box {
+.thumbtack-node .title-box {
   height: 50px;
   line-height: 50px;
   background: var(--background-box-title);
@@ -258,29 +258,29 @@ cursor: pointer;
   border-radius: 4px 4px 0px 0px;
   padding-left: 10px;
 }
-.thumb-tack .title-box svg {
+.thumbtack .title-box svg {
   position: initial;
 }
-.thumb-tack-node .box {
+.thumbtack-node .box {
   padding: 10px 20px 20px 20px;
   font-size: 14px;
   color: #555555;
 
 }
-.thumb-tack-node .box p {
+.thumbtack-node .box p {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.thumb-tack-node.welcome {
+.thumbtack-node.welcome {
   width: 250px;
 }
 
-.thumb-tack-node.slack .title-box {
+.thumbtack-node.slack .title-box {
   border-radius: 4px;
 }
 
-.thumb-tack-node input, .thumb-tack-node select, .thumb-tack-node textarea {
+.thumbtack-node input, .thumbtack-node select, .thumbtack-node textarea {
   border-radius: 4px;
   border: 1px solid var(--border-color);
   height: 30px;
@@ -290,36 +290,36 @@ cursor: pointer;
   color: #555555;
 }
 
-.thumb-tack-node textarea {
+.thumbtack-node textarea {
   height: 100px;
 }
 
 
-.thumb-tack-node.personalized {
+.thumbtack-node.personalized {
   background: red;
   height: 200px;
   text-align: center;
   color: white;
 }
-.thumb-tack-node.personalized .input {
+.thumbtack-node.personalized .input {
   background: yellow;
 }
-.thumb-tack-node.personalized .output {
+.thumbtack-node.personalized .output {
   background: green;
 }
 
-.thumb-tack-node.personalized.selected {
+.thumbtack-node.personalized.selected {
   background: blue;
 }
 
-.thumb-tack .connection .point {
+.thumbtack .connection .point {
   stroke: var(--border-color);
   stroke-width: 2;
   fill: white;
   
 }
 
-.thumb-tack .connection .point.selected, .thumb-tack .connection .point:hover {
+.thumbtack .connection .point.selected, .thumbtack .connection .point:hover {
   fill: #4ea9ff;
 }
 
