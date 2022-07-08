@@ -1,13 +1,13 @@
 import { css, LitElement, html } from 'lit-element';
-import { style } from '../dist/drawflow.style';
-import '../dist/drawflow.min';
+import { style } from '../dist/thumbtack.style';
+import '../dist/thumbtack.min';
 
-class DrawflowElement extends LitElement {
+class ThumbtackElement extends LitElement {
   static get styles() {
     return [
       style,
       css`
-        #drawflow {
+        #thumbtack {
           display: block;
           position: relative;
           width: 100%;
@@ -19,12 +19,12 @@ class DrawflowElement extends LitElement {
 
   render() {
     return html`
-      <div id="drawflow"></div>
+      <div id="thumbtack"></div>
     `;
   }
 
   firstUpdated() {
-    const container = this.shadowRoot?.getElementById('drawflow');
+    const container = this.shadowRoot?.getElementById('thumbtack');
     const editor = new Thumbtack(container);
 
     editor.reroute = true;
@@ -45,4 +45,4 @@ class DrawflowElement extends LitElement {
   }
 }
 
-customElements.define("drawflow-element", DrawflowElement);
+customElements.define("thumbtack-element", ThumbtackElement);

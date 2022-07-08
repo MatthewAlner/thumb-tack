@@ -1,21 +1,21 @@
-[![npm](https://img.shields.io/npm/v/drawflow?color=green)](https://www.npmjs.com/package/drawflow)
-![npm](https://img.shields.io/npm/dy/drawflow)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/drawflow)
-[![GitHub license](https://img.shields.io/github/license/jerosoler/Drawflow)](https://github.com/jerosoler/Drawflow/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/thumbtack?color=green)](https://www.npmjs.com/package/thumbtack)
+![npm](https://img.shields.io/npm/dy/thumbtack)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/thumbtack)
+[![GitHub license](https://img.shields.io/github/license/jerosoler/Thumbtack)](https://github.com/jerosoler/Thumbtack/blob/master/LICENSE)
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fjerosoler)](https://twitter.com/jerosoler)
-# Drawflow
+# Thumbtack
 
-![Demo](https://github.com/jerosoler/Drawflow/raw/master/docs/drawflow.gif)
+![Demo](https://github.com/jerosoler/Thumbtack/raw/master/docs/thumbtack.gif)
 
 Simple flow library.
 
-Drawflow allows you to create data flows easily and quickly.
+Thumbtack allows you to create data flows easily and quickly.
 
 Installing only a javascript library and with four lines of code.
 
-⭐ [LIVE DEMO](https://jerosoler.github.io/Drawflow/)
+⭐ [LIVE DEMO](https://jerosoler.github.io/Thumbtack/)
 
-🎨 [THEME EDIT GENERATOR](https://jerosoler.github.io/drawflow-theme-generator/)
+🎨 [THEME EDIT GENERATOR](https://jerosoler.github.io/thumbtack-theme-generator/)
 
 ## Table of contents
 - [Features](#features)
@@ -59,50 +59,50 @@ Installing only a javascript library and with four lines of code.
 ## Installation
 Download or clone repository and copy the dist folder, CDN option Or npm.  
 #### Clone
-`git clone https://github.com/jerosoler/Drawflow.git`
+`git clone https://github.com/jerosoler/Thumbtack.git`
 
 #### CDN
 ```html
 # Last
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jerosoler/Drawflow/dist/drawflow.min.css">
-<script src="https://cdn.jsdelivr.net/gh/jerosoler/Drawflow/dist/drawflow.min.js"></script>
-# or version view releases https://github.com/jerosoler/Drawflow/releases
-<link rel="stylesheet" href="https://unpkg.com/drawflow@x.x.xx/dist/drawflow.min.css" />
-<script src="https://unpkg.com/drawflow@x.x.xx/dist/drawflow.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtack/dist/thumbtack.min.css">
+<script src="https://cdn.jsdelivr.net/gh/jerosoler/Thumbtack/dist/thumbtack.min.js"></script>
+# or version view releases https://github.com/jerosoler/Thumbtack/releases
+<link rel="stylesheet" href="https://unpkg.com/thumbtack@x.x.xx/dist/thumbtack.min.css" />
+<script src="https://unpkg.com/thumbtack@x.x.xx/dist/thumbtack.min.js"></script>
 ```
 
 #### NPM
 ```javascript
-npm i drawflow
+npm i thumbtack
 ```
 
 ### Typescript
-External package. More info [#119](https://github.com/jerosoler/Drawflow/issues/119)
+External package. More info [#119](https://github.com/jerosoler/Thumbtack/issues/119)
 ```javascript
-npm install -D @types/drawflow
+npm install -D @types/thumbtack
 ```
 
 #### Import
 ```javascript
-import Drawflow from 'drawflow'
-import styleDrawflow from 'drawflow/dist/drawflow.min.css'
+import Thumbtack from 'thumbtack'
+import styleThumbtack from 'thumbtack/dist/thumbtack.min.css'
 ```
 
 #### Require
 ```javascript
-var Drawflow = require('drawflow')
-var styleDrawflow = require('drawflow/dist/drawflow.min.css')
+var Thumbtack = require('thumbtack')
+var styleThumbtack = require('thumbtack/dist/thumbtack.min.css')
 ```
 
-Create the parent element of **drawflow**.
+Create the parent element of **thumbtack**.
 ```html
-<div id="drawflow"></div>
+<div id="thumbtack"></div>
 ```
 ### Running
-Start drawflow.
+Start thumbtack.
 
 ```javascript
-var id = document.getElementById("drawflow");
+var id = document.getElementById("thumbtack");
 const editor = new Thumbtack(id);
 editor.start();
 ```
@@ -138,7 +138,7 @@ editor.value = new Thumbtack(id, Vue, internalInstance.appContext.app._context);
 Add to `nuxt.config.js` file
 ```javascript
 build: {
-    transpile: ['drawflow'],
+    transpile: ['thumbtack'],
     ...
   }
 ```
@@ -268,7 +268,7 @@ Mehtod | Description
 `getNodeFromId(id)` | Get Info of node. Ex: id: `5`
 `getNodesFromName(name)` | Return Array of nodes id. Ex: name: `telegram`
 `removeNodeId(id)` | Remove node. Ex id: `node-x`
-`updateNodeDataFromId` | Update data element. Ex: `5, { name: 'Drawflow' }`
+`updateNodeDataFromId` | Update data element. Ex: `5, { name: 'Thumbtack' }`
 `addNodeInput(id)` | Add input to node. Ex id: `5`
 `addNodeOutput(id)` | Add output to node. Ex id: `5`
 `removeNodeInput(id, input_class)` | Remove input to node. Ex id: `5`, `input_2`
@@ -340,7 +340,7 @@ editor.import(exportdata);
 Example of exported data:
 ```json
 {
-    "drawflow": {
+    "thumbtack": {
         "Home": {
             "data": {}
         },
@@ -402,8 +402,8 @@ Example of exported data:
 ```
 
 ## Example
-View the complete example in folder [docs](https://github.com/jerosoler/Drawflow/tree/master/docs).  
-There is also an [example](docs/drawflow-element.html) how to use Drawflow in a custom element. (based on [LitElement](https://lit-element.polymer-project.org)).  
+View the complete example in folder [docs](https://github.com/jerosoler/Thumbtack/tree/master/docs).  
+There is also an [example](docs/thumbtack-element.html) how to use Thumbtack in a custom element. (based on [LitElement](https://lit-element.polymer-project.org)).  
 
 ## License
 MIT License
